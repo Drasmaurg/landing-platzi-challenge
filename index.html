@@ -10,7 +10,7 @@
 <body>
     <!--Inicio del Header-->
     <header>
-        <a href="#" class="logo">Logo</a>
+        <a href="#" class="logo">Moon World</a>
         <ul>
             <li><a href="#" class="active">Home</a></li>
             <li><a href="#">About</a></li>
@@ -25,7 +25,7 @@
         <img src="/images/moon.png" id="moon">
         <img src="/images/mountains_behind.png" id="mountains_behind">
         <h2 id="text">Moon Light</h2>
-        <a href="#sec" id="btn">Explore</a>
+        <a href="#sec" id="btn">Explora</a>
         <img src="/images/mountains_front.png" id="mountains_front">
     </section>
     <div class="sec" id="sec">
@@ -60,6 +60,13 @@
         </p>
     </div>
 
+    <audio id="heartbeat" src="/Gymnopédie No 1.mp3" preload="auto">
+        Your browser does not support the <code>audio</code> element.
+    </audio>
+
+  
+
+
     <script>
         let stars = document.getElementById('stars');
         let moon = document.getElementById('moon');
@@ -69,6 +76,23 @@
         let mountains_front = document.getElementById('mountains_front');
         let header = document.querySelector('header');
 
+        
+         /* SONIDOS EN IMAGENES*/
+         var playBtn = document.getElementById('btn'),
+         hearbeat = document.getElementById('heartbeat')
+	     audios = document.querySelectorAll('audio');
+         console.log(audios);
+
+         playBtn.addEventListener('mouseover', function() {
+        [].forEach.call(audios, function(audio) {
+        // do whatever
+         audio.play();
+        });
+        }, false);
+
+    
+       
+         /* FIN SONIDOS EN IMAGENES*/
 
         window.addEventListener('scroll', function(){
             let value = window.scrollY;
@@ -83,6 +107,11 @@
 
 
         })
+
+        
     </script>
 </body>
 </html>
+
+
+
